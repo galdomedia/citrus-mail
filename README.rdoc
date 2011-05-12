@@ -1,0 +1,72 @@
+= citrus-mail
+
+Description goes here.
+
+== Example usage
+
+= Creating list instance(representing freshmial subscription list):
+
+You can create client instance and then get list
+@client = CitrusMail::Client.new('your_api_key')
+@list = @client.get_list('your_list_key')
+
+or create list
+
+@list = CitrusMail::List.new('you_api_key', 'your_list_key')
+
+= Available CitrusMail::List methods
+
+@list.add_subscriber(email, name, custom_fields, options)
+Adds new subscriber with given email.
+Params:
+  name: name for subscriber(default: nil)
+  cusom_fields: custom fileds for subscriber(default: {})
+  options: only one option exists 'confirm_email' (if true subscriber will get email with confirmation link) (default: {:confirm_email => true})
+
+@list.confirm(email)
+Confirm subscriber with given email.
+
+@list.add_and_confirm_subscriber(email)
+Add new subscriber with given email and make it confirmed.
+Params are the same as in add_subscriber method, except options[:confirm_email] which is always false.
+
+@list.modify_subscriber(emial, fields)
+Modify subscriber with given email.
+Params:
+  fields: fields to change. :name is maped to 'freshmail_name' , and every else is maped to 'freshmail_custom_field' (default: {})
+
+@list.change_state(identifier, state)
+Modify state subscriber with given email.
+Params:
+  state(Fixnum): posible values: 4 - unsubscribed, 6 - removed
+
+@list.get_empty_fields(email)
+Get empty fields for subscriber with given email.
+
+@list.remove(email)
+Remove(unsubscribe) subscriber with given email.
+
+All this methods will raise
+  CitrusMail::RequestFailed if http request faild
+  CitrusMail::InvalidAPIKey if api key is invalid (FreshMail return code 104)
+  CitrusMail::InvalidListKey if list key is invalid (FreshMail return code 101)
+  CitrusMail::InvalidEmail if email is invalid (FreshMail return code 202)
+  CitrusMail::EmailExists if email already exists for list (FreshMail return code 201)
+  CitrusMail::SubscriberNotExists if subscriber not exists (FreshMail return code 206)
+    All above exceptions are descendants of CitrusMail::CitrusMailError.
+  and CitrusMail::CitrusMailError if FreshMail return code greater than 100
+
+== Contributing to citrus-mail
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2011 Galdomedia. See LICENSE.txt for
+further details.
