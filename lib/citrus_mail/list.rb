@@ -7,7 +7,7 @@ module CitrusMail
       if client_or_api_key.is_a?(CitrusMail::Client)
         @client = client_or_api_key
       else
-        @client = CitrusMail.new(client_or_api_key)
+        @client = CitrusMail::Client.new(client_or_api_key)
       end
     end
 
