@@ -8,19 +8,29 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["GaldoMedia"]
-  s.date = %q{2011-05-12}
-  s.description = %q{TODO: longer description of your gem}
-  s.email = %q{kontakt@galdomedia.pl}
+  s.authors = ["Piotr Boniecki", "GaldoMedia"]
+  s.date = %q{2011-05-17}
+  s.description = %q{Gem that gives you easy integration with polish mailing service FreshMail (freshmail.pl)}
+  s.email = %q{piotr@galdomedia.pl}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE.txt",
+    "README.rdoc",
+    "Rakefile",
     "VERSION",
+    "citrus-mail.gemspec",
+    "lib/citrus_mail.rb",
     "lib/citrus_mail/client.rb",
     "lib/citrus_mail/list.rb",
     "lib/citrus_mail/response.rb",
+    "test/helper.rb",
+    "test/test_client.rb",
+    "test/test_list.rb",
     "test/test_response.rb"
   ]
   s.homepage = %q{https://github.com/galdomedia/citrus-mail}

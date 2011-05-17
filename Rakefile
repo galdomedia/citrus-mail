@@ -18,9 +18,9 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "https://github.com/galdomedia/citrus-mail"
   gem.license = "MIT"
   gem.summary = %Q{Nifty Rails gem for nice FreshMail integration}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "kontakt@galdomedia.pl"
-  gem.authors = ["GaldoMedia"]
+  gem.description = %Q{Gem that gives you easy integration with polish mailing service FreshMail (freshmail.pl)}
+  gem.email = "piotr@galdomedia.pl"
+  gem.authors = ["Piotr Boniecki", "GaldoMedia"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

@@ -43,7 +43,7 @@ Params:
 Modify state subscriber with given email.
 
 Params:
-* state(Fixnum): posible values: 4 - unsubscribed, 6 - removed
+* state(Fixnum): possible values: 4 - unsubscribed, 6 - removed
 
 ===== @list.get_empty_fields(email)
 Get empty fields for subscriber with given email.
@@ -59,7 +59,7 @@ All this methods will raise
 * CitrusMail::InvalidEmail if email is invalid (FreshMail return code 202)
 * CitrusMail::EmailExists if email already exists for list (FreshMail return code 201)
 * CitrusMail::SubscriberNotExists if subscriber not exists (FreshMail return code 206)
-    All above exceptions are descendants of CitrusMail::CitrusMailError.
+All above exceptions are descendants of CitrusMail::CitrusMailError.
 * and CitrusMail::CitrusMailError if FreshMail return code is greater than 100
 
 === CitrusMail::Response
