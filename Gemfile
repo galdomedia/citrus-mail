@@ -1,8 +1,8 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-group :development do
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.6.0"
-  gem "rcov", ">= 0"
-  gem 'shoulda'
-end
+gemspec
+
+gem "bundler"
+gem "jeweler"
+gem 'shoulda'
+

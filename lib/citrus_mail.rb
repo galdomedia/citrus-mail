@@ -57,13 +57,7 @@ module CitrusMail
   end
 end
 
+require "citrus_mail/version"
 require 'citrus_mail/client'
 require 'citrus_mail/list'
 require 'citrus_mail/response'
-
-# jtidhzdxlp
-
-#require 'citrus_mail'
-#cm = CitrusMail::Client.new('0633bb5ff7191ff48c4f065aa17f0321')
-#list = cm.get_list('hi03a662gw')
-#r = list.add_subscriber('piotr@galdomedia.pl')
