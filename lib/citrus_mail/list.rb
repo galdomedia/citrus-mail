@@ -14,7 +14,7 @@ module CitrusMail
     def add_subscriber(email, name=nil, custom_fields={}, options={:confirm_email => true})
       params = {:freshmail_email => email}
       params[:freshmail_name] = name if name
-      params[:freshmail_custom_field] = custom_fields if custom_fields.empty?
+      params[:freshmail_custom_field] = custom_fields unless custom_fields.empty?
       unless options[:confirm_email].nil?
         params[:confirm_email] = options[:confirm_email]
       end
