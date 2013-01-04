@@ -1,5 +1,6 @@
 require 'net/http'
 require 'net/https'
+require 'cgi'
 
 module CitrusMail
   class Client
@@ -68,9 +69,8 @@ module CitrusMail
       end
     end
 
-    #copied from ''net/http'
     def urlencode(str)
-      str.gsub(/[^a-zA-Z0-9_\.\-]/n) { |s| sprintf('%%%02x', s[0]) }
+      CGI.escape(str).gsub('+', '%20')
     end
 
   end
